@@ -1,0 +1,5 @@
+{
+  "name": "Smart Auto Calendar",
+  "description": "A calendar-based schedule management app with automatic holiday reflection and category-based organization.",
+  "requestFramePermissions": []
+}

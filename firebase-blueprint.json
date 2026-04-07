@@ -1,0 +1,25 @@
+{
+  "entities": {
+    "Schedule": {
+      "title": "Schedule",
+      "description": "A user's scheduled event on the calendar.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "The title of the schedule." },
+        "date": { "type": "string", "format": "date", "description": "The date of the schedule (YYYY-MM-DD)." },
+        "time": { "type": "string", "description": "The time of the schedule (HH:mm)." },
+        "memo": { "type": "string", "description": "Optional notes for the schedule." },
+        "category": { "type": "string", "enum": ["work", "personal", "important", "other"], "description": "The category of the schedule." },
+        "uid": { "type": "string", "description": "The ID of the user who owns this schedule." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the schedule was created." }
+      },
+      "required": ["title", "date", "category", "uid", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/schedules/{scheduleId}": {
+      "schema": "Schedule",
+      "description": "A collection of user schedules."
+    }
+  }
+}
